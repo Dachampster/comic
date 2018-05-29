@@ -1,0 +1,104 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/build/prism.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <ul id = "navigation" class="nav">
+        <li onclick="showComic()">Comic</li>
+        <li onclick="showMusic()">Music </li>
+        <li onclick="showMerch()">Merch</li>
+        <li onclick="showOrderForm()">Order Form</li>
+        <li onclick="showContactMe()">Contact Me</li>
+    </ul>
+    <br>
+    
+    <div class="wrapper">
+        <div class="rec-prism">
+            <div class="face face-top">
+                <div class="content">
+                    <h2>Order Form</h2>
+                    <small>Enter your shipping information</small>
+                    <form onsubmit="event.preventDefault()">
+                        <div class="field-wrapper">
+                            <input type="text" name="email" placeholder="email">
+                            <label>e-mail</label>
+                        </div>
+                        <div class="field-wrapper">
+                            <input type="submit" value="Complete Purchase" onclick="showContactMe()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="face face-right">
+                <div class="content">
+                    <h2>Music</h2>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/6249700&color=%238800e3&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>
+            </div>
+    
+            <div class="face face-back">
+                <div class="content">
+                    <h2>Merch</h2>
+                    <small>Enter your email so we can send you a reset link for your password</small>
+                    <form onsubmit="event.preventDefault()">
+                        <div class="field-wrapper">
+                            <input type="text" name="email" placeholder="email">
+                            <label>e-mail</label>
+                        </div>
+                        <div class="field-wrapper">
+                            <input type="submit" value="Complete order!" onclick="showOrderForm()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="face face-front">
+                <div class="content">
+                    <h2>Sasha Ruins Everything</h2> 
+                    <!-- Page goes here -->
+                    <div id="comic"></div>
+    
+                   
+                    
+                    <!-- navbuttons -->
+                    <img id="first"src="/icons/first.png" alt="first page">
+                    <img id="prev"src="/icons/prev.png" alt="previous page">
+                    <img id="next"src="/icons/next.png" alt="next page">
+                    <img id="last"src="/icons/last.png" alt="latest page">
+    
+                    <form onsubmit="event.preventDefault()">
+                        <div class="field-wrapper">
+                            <input type="submit" value="Check out some merch!" onclick="showMerch()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="face face-left">
+                <div class="content">
+                        <h2>Bio</h2>
+                        <p>Hello, thanks for visiting my little site. A little about myself, my name is
+                                Randolph and I'm a junior web developer currently based in Charlotte. I'm 
+                                also a cartoonist, music producer, graphic designer and amateur game designer.
+                                You can find examples of my work on this page, and my Github and Linkedin on the
+                                contact page.</p>
+                        
+        
+                </div>
+            </div>
+    
+            <div class="face face-bottom">
+                <div class="content">
+                    <div class="thank-you-msg">
+                        Thank you for visiting!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/js/merch.js"></script>
+<script src="/js/comic.js"></script>
+<script src="/js/game.js"></script>
