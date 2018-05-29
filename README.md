@@ -1,0 +1,2 @@
+# comic
+displays comic
