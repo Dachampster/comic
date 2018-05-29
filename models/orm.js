@@ -1,6 +1,6 @@
 const fs = require('fs');
 var path = require('path');
-fs.readFile('../config/seed.json', 'utf8', function(err,data){
+fs.readFile('config/seed.json', 'utf8', function(err,data){
     if (err){
         throw err;
     }
@@ -13,6 +13,22 @@ fs.readFile('../config/seed.json', 'utf8', function(err,data){
 // });
 
 const orm = {
+    grabIndex : function(comics, lookup) {
+        for (index in comics) {
+            if (index == lookup - 1) {
+               return comics[index];
+            } else if (comics[index] instanceof Object) {
+                grabIndex(comics[index], lookup);
+            }
+        }
+    },
+    grabFirst : function(comics){
+        return comics[0];
+    },
+    grabLatest : function(comics){
+        return comics[comics.length];
+    },
+
     find : function(comic,current, direction) {
         let index = current.index;
         switch (direction){
@@ -22,23 +38,9 @@ const orm = {
             case 'backward':
             newPage = comic[index - 1] || comic[index];
             break;
-            case 'first':
-            newPage = comic[0];
-            break;
-            case 'recent':
-            newPage = comic[comic.length];
-            break;
         }
-        return grabIndex(newPage);
-    },
-    grabIndex : function(comics, lookup) {
-        for (index in comics) {
-            if (index == lookup - 1) {
-               return comics[index];
-            } else if (comics[index] instanceof Object) {
-                grabIndex(comics[index], lookup);
-            }
-        }
-    } 
+        return this.grabIndex(newPage);
+    }
+    
 }
 module.exports = orm;
