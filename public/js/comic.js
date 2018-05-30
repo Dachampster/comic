@@ -1,20 +1,21 @@
 $(document).ready(function () {
     
-changePage(0,'latest');
+updatePage(0,'latest');
 getChapters();
 
 });
 
-function changePage(current,direction){
+function updatePage(current,direction){
     $.ajax({
         method: "GET",
         url: `/comic/${current}/${direction}`
     }).then(function (data) {
         let newPage = data;
-        updatePage(newPage);
+        buildPage(newPage);
+        
     });
 }
-function updatePage(newPage){
+function buildPage(newPage){
     $('#comic').empty();
         let page = $('<img>');
         $(page).attr('id','page');
@@ -31,9 +32,10 @@ function getChapters(){
         url: `/comic/chapters`
     }).then(function (data) {
         let chapters = parseInt(data);
+        console.log(chapters);
         for(let i = 0;i<chapters;i++){
             let num = i + 1;
-            buildChapters(num,chapters);
+            buildChapters(num);
         }
     });
 }
@@ -42,22 +44,23 @@ function buildChapters(num,chapters){
     $(option).val(num);
     $(option).addClass('chapter');
     $(option).text(`Chapter ${num}`);
-    $("#chapters").append(option);
-    if(num = chapters){
+    if(num = 11){
         $(option).attr('selected','selected');
     }
-
+    $("#chapters").append(option);
 }
 
+//event listeners
 $('#chapters').on('change', function(event){
     event.preventDefault();
-    let num = parseInt($( "select option:selected" ).val());
+    let num = $( "select option:selected" ).val();
     $.ajax({
         method: "GET",
-        url: `/comic/jump/${num}`
+        url: `/comic/${num}`
     }).then(function (data) {
         let newPage = data;
-        updatePage(newPage);
+        //its hacky but works
+        updatePage(newPage.index + 1, 'backwards');
         
     });
 })

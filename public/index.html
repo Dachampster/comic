@@ -3,23 +3,18 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-    <ul id = "navigation" class="nav">
+    <!-- <ul id = "navigation" class="nav">
         <li onclick="showComic()">Comic</li>
         <li onclick="showMusic()">Music </li>
         <li onclick="showMerch()">Merch</li>
         <li onclick="showOrderForm()">Order Form</li>
         <li onclick="showContactMe()">Contact Me</li>
     </ul>
-    <br>
-    <div id = 'left'><span>He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
-
-        The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you copy? Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on! I prefer a straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to interpret the entire Imperial computer network.
-        
-        Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
-        
-        You know, I think that R2 unit we bought might have been stolen. What makes you think that? Well, I stumbled across a recording while I was cleaning him. He says he belongs to someone called Obi-Wan Kenobi. I thought he might have meant old Ben. Do you know what he's talking about? Well, I wonder if he's related to Ben. That old man's just a crazy old wizard. Tomorrow I want you to take that R2 unit into Anchorhead and have its memory flushed. That'll be the end of it. It belongs to us now. But what if this Obi-Wan comes looking for him? He won't, I don't think he exists any more. He died about the same time as your father. He knew my father? I told you to forget it. Your only concern is to prepare the new droids for tomorrow. In the morning I want them on the south ridge working out those condensers.
-        
-        They've coming in! Three marks at two ten. I'll take them myself! Cover me! Yes, sir. I can't maneuver! Stay on target. We're too close. Stay on target! Loosen up! Gold Five to Red Leader... Lost Tiree, lost Dutch. I copy, Gold Five. They came from behind.... We've analyzed their attack, sir, and there is a danger. Should I have your ship standing by? Evacuate? In out moment of triumph? I think you overestimate their chances! Rebel base, three minutes and closing. Red Group, this is Red Leader.</span></div>
+    <br> -->
+    <div id = 'left'>
+        <img onclick="showComic()" height = '292px' width = '292px' src = "previews/comiclink.PNG">
+        <img onclick="showMusic()" height = '292px' width = '292px' src = "previews/musiclink.PNG">
+    </div>
     <div class="wrapper">
         <div class="rec-prism">
             <div class="face face-top">
@@ -57,9 +52,10 @@
                 <div class="content">
                     <img width = '100%'src = 'previews/banner.JPG'>
     
-                    <form onsubmit="event.preventDefault()">
+                    <form id = 'form'onsubmit="validateForm()">
 
                     <p>// THE LAST NUMBER (preorder) </p>
+                    <img class = 'devil'width = '75px'src = 'previews/album.JPG'>
                     <div class="field-wrapper">
                     <small>Started in 2014, Dachampster's long awaited chiptune debut is finally near. 19 songs combine to form a cohesive narrative reminiscent of movie and game soundtracks.</small>
                     <br><input type = 'number' name='album'><small> $4.99</small>
@@ -127,6 +123,9 @@
                                 also a cartoonist, music producer, graphic designer and amateur game designer.
                                 You can find examples of my work on this page, and my Github and Linkedin on the
                                 contact page.</p>
+                                <h2>Github</h2>
+                                <h2>Linkedin</h2>
+                                <h2>Twitter(dont click this)</h2>
                         
         
                 </div>
@@ -142,15 +141,10 @@
         </div>
     </div>
 
-    <div id = 'right'><span>He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
-
-        The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you copy? Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on! I prefer a straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to interpret the entire Imperial computer network.
-        
-        Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
-        
-        You know, I think that R2 unit we bought might have been stolen. What makes you think that? Well, I stumbled across a recording while I was cleaning him. He says he belongs to someone called Obi-Wan Kenobi. I thought he might have meant old Ben. Do you know what he's talking about? Well, I wonder if he's related to Ben. That old man's just a crazy old wizard. Tomorrow I want you to take that R2 unit into Anchorhead and have its memory flushed. That'll be the end of it. It belongs to us now. But what if this Obi-Wan comes looking for him? He won't, I don't think he exists any more. He died about the same time as your father. He knew my father? I told you to forget it. Your only concern is to prepare the new droids for tomorrow. In the morning I want them on the south ridge working out those condensers.
-        
-        They've coming in! Three marks at two ten. I'll take them myself! Cover me! Yes, sir. I can't maneuver! Stay on target. We're too close. Stay on target! Loosen up! Gold Five to Red Leader... Lost Tiree, lost Dutch. I copy, Gold Five. They came from behind.... We've analyzed their attack, sir, and there is a danger. Should I have your ship standing by? Evacuate? In out moment of triumph? I think you overestimate their chances! Rebel base, three minutes and closing. Red Group, this is Red Leader.</span></div>
+    <div id = 'right'>
+            <img onclick="showMerch()" height = '292px' width = '292px' src = "previews/merchlink.PNG">
+            <img onclick="showContactMe()" height = '292px' width = '292px' src = "previews/aboutlink.PNG">
+    </div>
 </body>
 <style>
     #navigation{
@@ -174,5 +168,6 @@
         clear: both;
     }
 </style>
+<script src="/js/prism.js"></script>
 <script src="/js/merch.js"></script>
 <script src="/js/comic.js"></script>

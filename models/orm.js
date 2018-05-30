@@ -38,6 +38,10 @@ function Orm (comics){
             case 'latest':
             return (comic[comic.length - 1]);
             break;
+            case '':
+            return comic[current - 1];
+            break;
+
             
         }
     }
@@ -45,7 +49,7 @@ function Orm (comics){
 }
 let orm = new Orm(comic);
 // console.log(orm.grabChapters(comic));
-//console.log(orm.grabFirst(comic, 7));
+//console.log(orm.grabFirst(comic, 3));
 //console.log(orm.grabIndex(comic, 10));
 //console.log(orm.find(comic,199,'backwards'));
 //console.log(orm.grabLatest(comic));

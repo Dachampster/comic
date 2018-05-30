@@ -15,7 +15,7 @@ const orm = require("../models/orm.js");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    res.sendFile('merch.html', { root: "public" });
+    res.sendFile('index.html', { root: "public" });
   });
 
   app.get('/comic/:cur/:dir',function(req,res){
@@ -32,9 +32,11 @@ module.exports = function(app) {
     res.send(chapters);
   }); 
 
-  app.get('/comic/jump/:chapter',function(req,res){
+  app.get('/comic/:jump',function(req,res){
     let comic = orm.comic;
-    let newPage = orm.grabFirst(comic,req.params.chapter);
+    let num = parseInt(req.params.jump);
+    console.log(num); //does nothing
+    let newPage = orm.grabFirst(comic, num);
     res.send(newPage);
   }); 
 
