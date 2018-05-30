@@ -11,7 +11,15 @@
         <li onclick="showContactMe()">Contact Me</li>
     </ul>
     <br>
-    
+    <div id = 'left'><span>He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
+
+        The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you copy? Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on! I prefer a straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to interpret the entire Imperial computer network.
+        
+        Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
+        
+        You know, I think that R2 unit we bought might have been stolen. What makes you think that? Well, I stumbled across a recording while I was cleaning him. He says he belongs to someone called Obi-Wan Kenobi. I thought he might have meant old Ben. Do you know what he's talking about? Well, I wonder if he's related to Ben. That old man's just a crazy old wizard. Tomorrow I want you to take that R2 unit into Anchorhead and have its memory flushed. That'll be the end of it. It belongs to us now. But what if this Obi-Wan comes looking for him? He won't, I don't think he exists any more. He died about the same time as your father. He knew my father? I told you to forget it. Your only concern is to prepare the new droids for tomorrow. In the morning I want them on the south ridge working out those condensers.
+        
+        They've coming in! Three marks at two ten. I'll take them myself! Cover me! Yes, sir. I can't maneuver! Stay on target. We're too close. Stay on target! Loosen up! Gold Five to Red Leader... Lost Tiree, lost Dutch. I copy, Gold Five. They came from behind.... We've analyzed their attack, sir, and there is a danger. Should I have your ship standing by? Evacuate? In out moment of triumph? I think you overestimate their chances! Rebel base, three minutes and closing. Red Group, this is Red Leader.</span></div>
     <div class="wrapper">
         <div class="rec-prism">
             <div class="face face-top">
@@ -20,8 +28,12 @@
                     <small>Enter your shipping information</small>
                     <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email">
-                            <label>e-mail</label>
+                            <input type="text" name="address" placeholder="123 Main Street, Albany NY, 12345">
+                            <label>Street Address</label>
+                        </div>
+                        <div class="field-wrapper">
+                            <input type="text" name="address" placeholder="pickles@cucumber.net">
+                            <label>Street Address</label>
                         </div>
                         <div class="field-wrapper">
                             <input type="submit" value="Complete Purchase" onclick="showContactMe()">
@@ -32,22 +44,53 @@
     
             <div class="face face-right">
                 <div class="content">
-                    <h2>Music</h2>
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/6249700&color=%238800e3&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <form onsubmit="event.preventDefault()">
+                                <div class="field-wrapper">
+                                    <input type="submit" value="Album Preorders Are Live!" onclick="showMerch()">
+                                </div>
+                            </form>
+                    <iframe width="100%" height="525px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/6249700&color=%238800e3&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 </div>
             </div>
     
             <div class="face face-back">
                 <div class="content">
-                    <h2>Merch</h2>
-                    <small>Enter your email so we can send you a reset link for your password</small>
+                    <img width = '100%'src = 'previews/banner.JPG'>
+    
                     <form onsubmit="event.preventDefault()">
+
+                    <p>// THE LAST NUMBER (preorder) </p>
+                    <div class="field-wrapper">
+                    <small>Started in 2014, Dachampster's long awaited chiptune debut is finally near. 19 songs combine to form a cohesive narrative reminiscent of movie and game soundtracks.</small>
+                    <br><input type = 'number' name='album'><small> $4.99</small>
+                    </div>
+                    
+                    <p class = 'angel'>SASHA RUINS EVERYTHING Deluxe (preorder) </p>
+                    <img class = 'devil'height = '100px'src = 'previews/vol2print.JPG'>
+                    <div class="field-wrapper">
+                    <small>Sasha is back with an expanded and glossy new version of Chapters 8-11! This 120 page graphic novel contains several scenes not found in the online comic.</small>
+                    <br><small>(Comes with a 5 pack of stickers)</small>
+                    <br><small>(Batteries not included)</small>
+                    <br><input  type = 'number' name='print'><small> $19.99</small>
+                    </div>
+                    
+                    <p class = 'angel'>SASHA Sticker Bundle (preorder) </p>
+                    <img class = 'devil'height = '65px'src = 'previews/stickers.JPG'>
+                    <div class="field-wrapper">
+                    <small>If you just want the stickers by themselves. By default, you get 1 of each.</small>
+                    <br><input type = 'number' name='sticker'><small> $4.99</small>
+                    </div>
                         <div class="field-wrapper">
-                            <input type="text" name="email" placeholder="email">
-                            <label>e-mail</label>
+                            <input type="text" name="address" placeholder="123 Main Street, Albany NY, 12345">
+                            <label>Full Address (include zip)</label>
+                        </div>
+                        
+                        <div class="field-wrapper">
+                            <input type="text" name="email" placeholder="pickles@cucumber.net">
+                            <label>Email</label>
                         </div>
                         <div class="field-wrapper">
-                            <input type="submit" value="Complete order!" onclick="showOrderForm()">
+                            <input type="submit" value="Complete order!" onclick="showThankYou()">
                         </div>
                     </form>
                 </div>
@@ -55,18 +98,19 @@
     
             <div class="face face-front">
                 <div class="content">
-                    <h2>Sasha Ruins Everything</h2> 
                     <!-- Page goes here -->
                     <div id="comic"></div>
     
                    
                     
                     <!-- navbuttons -->
-                    <img id="first"src="/icons/first.png" alt="first page">
-                    <img id="prev"src="/icons/prev.png" alt="previous page">
-                    <img id="next"src="/icons/next.png" alt="next page">
-                    <img id="last"src="/icons/last.png" alt="latest page">
-    
+                    <div id = "navigation">
+                    <img class="butt"data-dir="first" src="/icons/first.png" alt="first page">
+                    <img class="butt"data-dir="backwards"src="/icons/prev.png" alt="previous page">
+                    <select id = "chapters"></select>
+                    <img class="butt"data-dir="forwards"src="/icons/next.png" alt="next page">
+                    <img class="butt"data-dir="latest"src="/icons/last.png" alt="latest page">
+                    </div>
                     <form onsubmit="event.preventDefault()">
                         <div class="field-wrapper">
                             <input type="submit" value="Check out some merch!" onclick="showMerch()">
@@ -91,14 +135,44 @@
             <div class="face face-bottom">
                 <div class="content">
                     <div class="thank-you-msg">
-                        Thank you for visiting!
+                        Thank you!
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <div id = 'right'><span>He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
+
+        The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you copy? Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on! I prefer a straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to interpret the entire Imperial computer network.
+        
+        Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
+        
+        You know, I think that R2 unit we bought might have been stolen. What makes you think that? Well, I stumbled across a recording while I was cleaning him. He says he belongs to someone called Obi-Wan Kenobi. I thought he might have meant old Ben. Do you know what he's talking about? Well, I wonder if he's related to Ben. That old man's just a crazy old wizard. Tomorrow I want you to take that R2 unit into Anchorhead and have its memory flushed. That'll be the end of it. It belongs to us now. But what if this Obi-Wan comes looking for him? He won't, I don't think he exists any more. He died about the same time as your father. He knew my father? I told you to forget it. Your only concern is to prepare the new droids for tomorrow. In the morning I want them on the south ridge working out those condensers.
+        
+        They've coming in! Three marks at two ten. I'll take them myself! Cover me! Yes, sir. I can't maneuver! Stay on target. We're too close. Stay on target! Loosen up! Gold Five to Red Leader... Lost Tiree, lost Dutch. I copy, Gold Five. They came from behind.... We've analyzed their attack, sir, and there is a danger. Should I have your ship standing by? Evacuate? In out moment of triumph? I think you overestimate their chances! Rebel base, three minutes and closing. Red Group, this is Red Leader.</span></div>
+</body>
+<style>
+    #navigation{
+        margin-left: 100px;
+    }
+    .title{
+        margin-left: 60px;
+    }
+    #left, #right{
+        width: 33%;
+    }
+    #left, #right, .wrapper{
+        float:left;
+    }
+    .devil{
+        float:left;
+        margin-right:10px;
+        margin-bottom: 5px;
+    }
+    .angel{
+        clear: both;
+    }
+</style>
 <script src="/js/merch.js"></script>
 <script src="/js/comic.js"></script>
-<script src="/js/game.js"></script>

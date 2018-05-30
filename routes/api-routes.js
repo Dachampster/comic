@@ -9,28 +9,35 @@
 var fs = require("fs");
 var path = require( 'path' );
 const $ = require('cheerio');
-var orm = require("../models/orm.js");
+const orm = require("../models/orm.js");
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/merch", function(req, res) {
-
+  app.get("/", function(req, res) {
     res.sendFile('merch.html', { root: "public" });
-    
   });
 
-  app.get("/read", function(req, res) {
+  app.get('/comic/:cur/:dir',function(req,res){
+    let direction = req.params.dir;
+    let current = req.params.cur;
+    let comic = orm.comic;
+    let update = orm.find(comic, current, direction);
+    res.send(update);
+  }); 
 
-    res.sendFile('index.html', { root: "public" });
-    
-  });
+  app.get('/comic/chapters',function(req,res){
+    let comic = orm.comic;
+    let chapters = orm.grabChapters(comic).toString();
+    res.send(chapters);
+  }); 
 
-  app.get("/jump/:dir", function(req, res) {
-    let data = orm.grabIndex(req.params.dir);
-    res.send(data);
-    
-  });
+  app.get('/comic/jump/:chapter',function(req,res){
+    let comic = orm.comic;
+    let newPage = orm.grabFirst(comic,req.params.chapter);
+    res.send(newPage);
+  }); 
+
 
  
 

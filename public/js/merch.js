@@ -1,36 +1,19 @@
 let prism = document.querySelector(".rec-prism");
-let page = "/comic/10/Page7.JPG";
-$("#comic").append(`<img width = '100%'class = "comic" src = ${page}>`);
-
-$(document).ready(function() {
-    
-  $('#nav').on('click', '.nav', function(event) {
-    event.preventDefault();
-    console.log('click');
-    // var direction = $(this).children(".burger_id").val();
-    let direction = $(this).data('dir');
-    $.ajax({
-      method: "GET",
-      url: "/jump/" + direction
-    }).then(function(data) {
-      // reload page to display devoured burger in proper column
-      location.reload();
-    });
-
-  });
-});
+$('body').css('background', 'linear-gradient(#a65cda, #56227b)');
 
 function showMusic(){
-
+  $('body').css('background', 'linear-gradient(#ff9d26, #965a00)');
   prism.style.transform = "translateZ(-100px) rotateY( -90deg)";
 }
 
 function showComic(){
+  $('body').css('background', 'linear-gradient(#a65cda, #56227b)');
   prism.style.transform = "translateZ(-100px)";
   
 }
 
 function showMerch(){
+  $('body').css('background', 'linear-gradient(#03a9f4, #42509e)');
   prism.style.transform = "translateZ(-100px) rotateY( -180deg)";
 }
 
@@ -39,6 +22,7 @@ function showOrderForm(){
 }
 
 function showContactMe(){
+  $('body').css('background', 'linear-gradient(#f538ff, #78007e)');
   prism.style.transform = "translateZ(-100px) rotateY( 90deg)";
   
 }

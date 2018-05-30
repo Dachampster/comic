@@ -5,14 +5,13 @@
 body {
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 14px;
-  background: linear-gradient(#a65cda, #56227b);
   padding: 10px;
   text-align: center;
 }
 
 .wrapper {
-  width: 350px;
-  height: 550px;
+  width: 400px;
+  height: 600px;
   margin: 60px auto;
   perspective: 600px;
   text-align: left;
@@ -29,8 +28,8 @@ body {
 
 .face {
   position: absolute;
-  width: 350px;
-  height: 550px;
+  width: 400px;
+  height: 600px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.96);
   border: 3px solid #56227b;
@@ -141,24 +140,24 @@ body {
   animation-delay: 2.5s;
 }
 .face-front {
-  transform: rotateY(0deg) translateZ(175px);
+  transform: rotateY(0deg) translateZ(200px);
 }
 .face-top {
-  height: 350px;
-  transform: rotateX(90deg) translateZ(175px);
+  height: 400px;
+  transform: rotateX(90deg) translateZ(200px);
 }
 .face-back {
-  transform: rotateY(180deg) translateZ(175px);
+  transform: rotateY(180deg) translateZ(200px);
 }
 .face-right {
-  transform: rotateY(90deg) translateZ(175px);
+  transform: rotateY(90deg) translateZ(200px);
 }
 .face-left {
-  transform: rotateY(-90deg) translateZ(175px);
+  transform: rotateY(-90deg) translateZ(200px);
 }
 .face-bottom {
-  height: 350px;
-  transform: rotateX(-90deg) translateZ(375px);
+  height: 400px;
+  transform: rotateX(-90deg) translateZ(400px);
 }
 
 .nav {

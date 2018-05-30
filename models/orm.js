@@ -1,48 +1,52 @@
 const fs = require('fs');
 var path = require('path');
-fs.readFile('config/seed.json', 'utf8', function (err, data) {
+let comics = fs.readFileSync('config/seed.json', 'utf8', function (err, data) {
     if (err) {
         throw err;
     }
-    const comics = JSON.parse(data);
-    console.log(orm.find(comics, comics[199], 'backwards'));
-    console.log(orm.grabIndex(comics, 10));
+    return (data);
 
 });
+let comic = JSON.parse(comics);
 
-const orm = {
-    // comics : this.comics,
-    grabIndex: function (comics, lookup) {
-        for (chapter in comics) {
-            if (chapter == lookup) {
-                return comics[chapter];
-            } else if (comics[chapter] instanceof Object) {
-                grabIndex(comics[chapter], lookup);
+function Orm (comics){
+    this.comic = comic,
+    this.grabChapters = function(comics){
+    let length = comics[comics.length - 1].chapter;
+    return(length)
+},
+    this.grabFirst = function(comics, lookup) {
+        for(var i in comics){
+            if (comics[i].chapter == lookup){
+              return (comics[i]);
             }
+            
         }
-    },
-    grabFirst: function (comics) {
-        return comics[0];
-    },
-    grabLatest: function (comics) {
-        return comics[comics.length];
-    },
 
-    find: function (comic, current, direction) {
-        console.log(current);
-        let index = current.index;
-        if (direction == 'forwards') {
-
-            lookup = comic[index] || comic[index - 1];
+    },
+    this.find= function (comic, current, direction) {
+        switch (direction){
+            case 'forwards':
+            return comic[current] || comic[current - 1];
+            break;
+            case 'backwards':
+            return comic[current - 2] || comic[current - 1];
+            break;
+            case 'first':
+            return comic[0];
+            break;
+            case 'latest':
+            return (comic[comic.length - 1]);
+            break;
+            
         }
-        else if (direction == 'backwards') {
-
-            lookup = comic[index - 2] || comic[index - 1];
-
-        }
-        return (lookup);
     }
 
 }
-
+let orm = new Orm(comic);
+// console.log(orm.grabChapters(comic));
+//console.log(orm.grabFirst(comic, 7));
+//console.log(orm.grabIndex(comic, 10));
+//console.log(orm.find(comic,199,'backwards'));
+//console.log(orm.grabLatest(comic));
 module.exports = orm;

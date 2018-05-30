@@ -1,6 +1,6 @@
 // Dimensions
-$prism-height: 550px;
-$prism-length: 350px;
+$prism-height: 600px;
+$prism-length: 400px;
 $prism-depth: $prism-length;
 $spacing: 10px;
 $br: 3px;
@@ -21,7 +21,6 @@ $green: #56227b;
 body{
   font-family: Tahoma,Verdana,Segoe,sans-serif; 
   font-size: 14px;
-  background: linear-gradient(#a65cda, #56227b);
   padding: $spacing;
   text-align: center;
 }
@@ -47,7 +46,7 @@ body{
   width: $prism-length;
   height: $prism-height;
   padding: $spacing;
-  background: rgba(255, 255, 255, 0.96);
+  // background: rgba(255, 255, 255, 0.96);
   border: 3px solid $green;
   border-radius: 3px;
   
