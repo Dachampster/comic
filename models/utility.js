@@ -50,6 +50,6 @@ let comicString = JSON.stringify(fullComic);
 fs.writeFile("../config/seed.json",comicString,"utf8", function (err){
   if (err){
     return console.log(err);
-  }
+  };
   console.log("it worked");
 });

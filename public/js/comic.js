@@ -44,7 +44,7 @@ function buildChapters(num,chapters){
     $(option).val(num);
     $(option).addClass('chapter');
     $(option).text(`Chapter ${num}`);
-    if(num = 11){
+    if(num = chapters){
         $(option).attr('selected','selected');
     }
     $("#chapters").append(option);
