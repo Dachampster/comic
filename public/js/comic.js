@@ -35,7 +35,7 @@ function getChapters(){
         console.log(chapters);
         for(let i = 0;i<chapters;i++){
             let num = i + 1;
-            buildChapters(num);
+            buildChapters(num,chapters);
         }
     });
 }
